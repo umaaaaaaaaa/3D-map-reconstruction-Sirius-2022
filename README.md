@@ -26,3 +26,8 @@ Also, we have not tried many other approaches to restoring misha from a point cl
 - [Vis2mesh](https://github.com/GDAOSU/vis2mesh)
 
 It would also be interesting to explore how the newly released [MobileNerf](https://mobile-nerf.github.io/) can be applied to the task.
+
+
+<p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Mq8LFUyvBrM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
