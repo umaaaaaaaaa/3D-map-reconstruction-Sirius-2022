@@ -33,6 +33,7 @@ In this part of the solution, we segment the images to find crabs on them, and t
 ## Other tested methods
 We also tried [neuralblox](https://github.com/ethz-asl/neuralblox), which of the depth maps and camera positions can restore the surface, however, on our data, this method did not prove itself very well. Perhaps more static images of the same place are needed for a good result.
 ![neuralblox](https://user-images.githubusercontent.com/88504487/187246041-e5dd8f92-39ef-486b-84ad-2945a6bfc621.jpg)
+
 Another tried method is [VDBFusion](https://github.com/PRBonn/vdbfusion). This neural network, under certain parameters, gave good approximations of the surface, but the surface has noise, so we preferred a more stable classical version of surface reconstruction.
 ![vdbfusion](https://user-images.githubusercontent.com/88504487/187246086-b3d2322c-5b22-4017-bdbc-5bd2ffd1b6b0.jpg)
 
