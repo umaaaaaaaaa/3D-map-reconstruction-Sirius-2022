@@ -14,6 +14,27 @@ The project is relevant because it is necessary to automate detailed underwater 
 
  Our pipeline includes the steps, described on the picture below.
  ![pipeline](https://user-images.githubusercontent.com/88504487/183307573-62930939-ee17-4393-842c-eb60dd6cfce9.jpg)
+ 
+ The following figure contains a detailed description of the components of the [Hierarchical-Localization network](https://github.com/cvg/Hierarchical-Localization/)  and the [Poisson method](https://github.com/mfdeveloper/surface_reconstruction_python#usage) implemented in open3d. As a result, we get the restored surface of the seabed from a series of frames.
+ ![mesh_reconstruction](https://user-images.githubusercontent.com/88504487/187232520-7d0a51f0-0ad9-4371-b3b7-b51fa8439484.jpg)
+## Results
+As an input data we have [this video](https://www.youtube.com/watch?v=Mq8LFUyvBrM&t=41s) from youtube. 
+Next, we get a point cloud with approximate camera positions. And using the Poisson method, we get a surface. We can pull the original image onto a surface where we can see crabs.
+![example](https://user-images.githubusercontent.com/88504487/187242244-0e56ba72-bfca-41c6-981e-6039d62d7d6f.png)
+
+The following is another example obtained from a video recording using our approach.
+
+![example2](https://user-images.githubusercontent.com/88504487/187243402-420db25c-e426-44c3-af44-61f0591001ba.png)
+
+## Objects segmentation
+In this part of the solution, we segment the images to find crabs on them, and then correlate the objects in the image and on the 3d mesh using the built-in localization in hloc.
+![segmentation](https://user-images.githubusercontent.com/88504487/187244774-3daa506f-4a5b-44ab-9a3d-8ec9a8f63982.png)
+
+## Other tested methods
+We also tried [neuralblox](https://github.com/ethz-asl/neuralblox), which of the depth maps and camera positions can restore the surface, however, on our data, this method did not prove itself very well. Perhaps more static images of the same place are needed for a good result.
+![neuralblox](https://user-images.githubusercontent.com/88504487/187246041-e5dd8f92-39ef-486b-84ad-2945a6bfc621.jpg)
+Another tried method is [VDBFusion](https://github.com/PRBonn/vdbfusion). This neural network, under certain parameters, gave good approximations of the surface, but the surface has noise, so we preferred a more stable classical version of surface reconstruction.
+![vdbfusion](https://user-images.githubusercontent.com/88504487/187246086-b3d2322c-5b22-4017-bdbc-5bd2ffd1b6b0.jpg)
 
  ## What's next?
 Despite the fact that we tried various non-classical methods of solving our problem, in conditions of limited time, we still could not implement all the ideas.
@@ -28,6 +49,4 @@ Also, we have not tried many other approaches to restoring misha from a point cl
 It would also be interesting to explore how the newly released [MobileNerf](https://mobile-nerf.github.io/) can be applied to the task.
 
 
-<p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Mq8LFUyvBrM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
+ 
